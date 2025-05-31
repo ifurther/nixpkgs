@@ -16,7 +16,6 @@
   pandas,
   pyqt-builder,
   pytestCheckHook,
-  qt6,
   scipy,
   setuptools,
   setuptools-scm,
@@ -25,7 +24,7 @@
 }:
 
 buildPythonPackage rec {
-  pname = "glueviz";
+  pname = "glue-core";
   version = "1.22.2";
   pyproject = true;
 
@@ -37,10 +36,6 @@ buildPythonPackage rec {
     tag = "v${version}";
     hash = "sha256-5YwZxVer3icA/7YmUIXTuyIlZYKrlFn5+4OYMbfvIlU=";
   };
-
-  buildInputs = [ pyqt-builder ];
-
-  nativeBuildInputs = [ qt6.wrapQtAppsHook ];
 
   build-system = [
     setuptools
